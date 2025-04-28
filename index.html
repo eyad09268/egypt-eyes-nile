@@ -3,113 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مبادرة مصر بعيون النيل لتوعية الشباب بالمشروعات القومية ورؤية مصر 2030">
   <title>مصر بعيون النيل</title>
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  
   <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
   <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <!-- CSS File -->
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <!-- AOS Library -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-
-
 </head>
+
 <body>
-  <header>
+  <div id="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+  <header class="animate__animated animate__fadeInDown animate__delay-1s">
+    
+    
     <h1>مصر بعيون النيل</h1>
-    <nav>
+    <nav aria-label="القائمة الرئيسية">
       <ul>
-        <li><a href="#">الرئيسية</a></li>
-        <li><a href="/goals.html">الأهداف</a></li>
-        <li><a href="#">رؤية المستقبل</a></li>
-        <li><a href="/videos.html">فيديوهات</a></li>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="goals.html">الأهداف</a></li>
+        <li><a href="projects.html">المشاريع</a></li>
+        <li><a href="videos.html">فيديوهات</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-     <section class="hero animate__animated animate__fadeIn">
-          <h2 class="typewriter-text">مستقبل مصر.. بنحلمه وهنحققه</h2>
-          <p>مع بعض بالوعي نحميها 💪🇪🇬</p>
-        </section>
-        
+    <section class="hero animate__animated animate__zoomIn animate__delay-1s">
+      <h2 class="typewriter-text">مستقبل مصر.. بنحلمه وهنحققه</h2>
+      <p class="animate__animated animate__fadeInUp animate__delay-2s">مع بعض بالوعي نحميها 💪🇪🇬</p>
+    </section>
 
     <section class="projects">
-      <h2>أهم المشروعات القومية</h2>
+      <h2 class="animate__animated animate__fadeInUp animate__delay-1s">أهم المشروعات القومية</h2>
       <div class="projects-container">
-        <div class="project-card" data-aos="fade-up" data-aos-duration="1000">
-          <img src="images/capital.jpg" alt="العاصمة الإدارية الجديدة">
+        <div class="project-card" data-aos="fade-up">
+          <img loading="lazy" src="images/capital.jpg" alt="تصميم حديث للمباني في العاصمة الإدارية الجديدة">
           <h3>العاصمة الإدارية الجديدة</h3>
           <p>مدينة ذكية بتغير وجه مصر... مباني حكومية، مناطق سكنية، ونظام نقل متطور.</p>
         </div>
 
-        <div class="project-card" data-aos="fade-up" data-aos-duration="1200">
-          <img src="images/haya-karima.jpg" alt="حياة كريمة">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+          <img loading="lazy" src="images/haya-karima.jpg" alt="مشاهد من مشروع حياة كريمة في الريف المصري">
           <h3>حياة كريمة</h3>
           <p>مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين.</p>
         </div>
 
-        <div class="project-card" data-aos="fade-up" data-aos-duration="1400">
-          <img src="images/roads.jpg" alt="مشروع الطرق والكباري">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <img loading="lazy" src="images/roads.jpg" alt="شبكة طرق وكباري حديثة في مصر">
           <h3>الطرق والكباري</h3>
           <p>أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.</p>
         </div>
       </div>
     </section>
+
     <section class="future" id="future">
-     <h2>رؤية المستقبل</h2>
-     <div class="future-container">
-       <div class="future-card" data-aos="fade-right">
-         <p>"أنا شايف إن مصر هتبقى من أقوى 10 اقتصاديات في العالم 💸"</p>
-         <h4>- أحمد مصطفى</h4>
-       </div>
-   
-       <div class="future-card" data-aos="fade-left">
-         <p>"هتكون فيها قطارات سريعة في كل محافظة وتكنولوجيا في كل بيت 🚄💻"</p>
-         <h4>- سارة محمد</h4>
-       </div>
-   
-       <div class="future-card" data-aos="zoom-in">
-         <p>"هيكون عندنا مدارس ذكية لكل الطلاب، ونت سريع في كل حتة 📱📶"</p>
-         <h4>- ياسين وائل</h4>
-       </div>
-     </div>
+      <h2 class="animate__animated animate__fadeInDown animate__delay-1s">رؤية المستقبل</h2>
+      <div class="future-container">
+        <div class="future-card" data-aos="fade-right" data-aos-delay="200">
+          <p>"أنا شايف إن مصر هتبقى من أقوى 10 اقتصاديات في العالم 💸"</p>
+          <h4>- أحمد مصطفى</h4>
+        </div>
     
+        <div class="future-card" data-aos="fade-left" data-aos-delay="300">
+          <p>"هتكون فيها قطارات سريعة في كل محافظة وتكنولوجيا في كل بيت 🚄💻"</p>
+          <h4>- سارة محمد</h4>
+        </div>
     
-    
-   </section>
-    
+        <div class="future-card" data-aos="zoom-in" data-aos-delay="400">
+          <p>"هيكون عندنا مدارس ذكية لكل الطلاب، ونت سريع في كل حتة 📱📶"</p>
+          <h4>- ياسين وائل</h4>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="footer" data-aos="fade-up">
+
+  <footer class="footer animate__animated animate__fadeInUp animate__delay-2s">
     <div class="footer-content">
       <h3>مبادرة "مصر بعيون النيل"</h3>
       <p>معًا بالوعي نحميها 🇪🇬</p>
       <ul class="footer-links">
-        <li><a href="#hero">الرئيسية</a></li>
-        <li><a href="/goals.html">الأهداف</a></li>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="goals.html">الأهداف</a></li>
         <li><a href="#future">رؤية المستقبل</a></li>
-        <li><a href="#form">شارك برؤيتك</a></li>
       </ul>
       <p class="copyright">
-        &copy; 2025 جميع الحقوق محفوظة - طلاب مدارس النيل 💡
+        &copy; <span id="currentYear"></span> جميع الحقوق محفوظة - طلاب مدارس النيل 💡
       </p>
     </div>
   </footer>
-  
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <button id="backToTop" title="اطلع فوق">⬆️</button>
+
+
+  <!-- Scripts -->
   <script>
-    AOS.init();
+    window.addEventListener('load', function() {
+      document.getElementById('loading-spinner').style.display = 'none';
+    });
   </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    const backToTopBtn = document.getElementById('backToTop');
+  
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+  
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
       duration: 1000,
-      once: true
+      once: true,
+      easing: 'ease-in-out',
+    });
+    
+    // تحديث السنة تلقائيًا
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    window.addEventListener('load', function() {
+      document.getElementById('loading-spinner').style.display = 'none';
     });
   </script>
   

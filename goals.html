@@ -3,42 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="أهداف مبادرة مصر بعيون النيل لتوعية الشباب بالمشروعات القومية ورؤية مصر 2030">
   <title>أهداف المبادرة | مصر بعيون النيل</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- Loading Spinner -->
+  <div id="loading-spinner">
+    <div class="spinner"></div>
+  </div>
 
-  <!-- 🧭 Navbar -->
-  <header class="navbar">
-    <div class="container">
-      <h1>مصر بعيون النيل</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="goals.html" class="active">الأهداف</a></li>
-          <li><a href="future.html">رؤية المستقبل</a></li>
-          <li><a href="share.html">شارك برؤيتك</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- Header -->
+  <header class="animate__animated animate__fadeInDown animate__delay-1s">
+    <h1>مصر بعيون النيل</h1>
+    <nav aria-label="القائمة الرئيسية">
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="goals.html" class="active">الأهداف</a></li>
+        <li><a href="projects.html">المشاريع</a></li>
+        <li><a href="videos.html">فيديوهات</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- 🎯 أهداف المبادرة -->
-  <section class="goals" id="goals" data-aos="fade-up">
-     <h2>أهداف مبادرة "مصر بعيون النيل"</h2>
-     <ul>
-       <li data-aos="fade-right">تسليط الضوء على إنجازات الدولة المصرية في آخر 10 سنين 💡</li>
-       <li data-aos="fade-left">عرض المشروعات القومية بطريقة بسيطة وسهلة</li>
-       <li data-aos="fade-right">نشر الوعي ومحاربة الشائعات السلبية</li>
-       <li data-aos="fade-left">تمكين الطلاب من التعبير عن رؤيتهم لمستقبل مصر</li>
-       <li data-aos="zoom-in">غرس حب الوطن والانتماء عند الجيل الجديد ❤️</li>
-     </ul>
-   </section>
+  <!-- Main Content -->
+  <main>
+    <!-- Goals Section -->
+    <section class="goals-page" id="goals">
+      <div class="container">
+        <h2 class="animate__animated animate__fadeInDown animate__delay-1s">أهداف مبادرة "مصر بعيون النيل"</h2>
+        <div class="goals-grid">
+          <div class="goal-card" data-aos="fade-right" data-aos-delay="100">
+            <div class="goal-icon">💡</div>
+            <h3>تسليط الضوء على الإنجازات</h3>
+            <p>تسليط الضوء على إنجازات الدولة المصرية في آخر 10 سنين</p>
+          </div>
 
-  <!-- 🔻 Footer -->
-  <footer class="footer" data-aos="fade-up">
+          <div class="goal-card" data-aos="fade-left" data-aos-delay="200">
+            <div class="goal-icon">📊</div>
+            <h3>عرض المشروعات القومية</h3>
+            <p>عرض المشروعات القومية بطريقة بسيطة وسهلة</p>
+          </div>
+
+          <div class="goal-card" data-aos="fade-right" data-aos-delay="300">
+            <div class="goal-icon">🛡️</div>
+            <h3>نشر الوعي</h3>
+            <p>نشر الوعي ومحاربة الشائعات السلبية</p>
+          </div>
+
+          <div class="goal-card" data-aos="fade-left" data-aos-delay="400">
+            <div class="goal-icon">🎯</div>
+            <h3>تمكين الطلاب</h3>
+            <p>تمكين الطلاب من التعبير عن رؤيتهم لمستقبل مصر</p>
+          </div>
+
+          <div class="goal-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="goal-icon">❤️</div>
+            <h3>غرس حب الوطن</h3>
+            <p>غرس حب الوطن والانتماء عند الجيل الجديد</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer animate__animated animate__fadeInUp animate__delay-2s">
     <div class="footer-content">
       <h3>مبادرة "مصر بعيون النيل"</h3>
       <p>معًا بالوعي نحميها 🇪🇬</p>
@@ -49,16 +90,45 @@
         <li><a href="share.html">شارك برؤيتك</a></li>
       </ul>
       <p class="copyright">
-        &copy; 2025 جميع الحقوق محفوظة - طلاب مدارس النيل 💡
+        &copy; <span id="currentYear"></span> جميع الحقوق محفوظة - طلاب مدارس النيل 💡
       </p>
     </div>
   </footer>
 
-  <!-- AOS Animations -->
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="اطلع فوق">⬆️</button>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
+    });
+    
+    // Update year automatically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Loading spinner
+    window.addEventListener('load', function() {
+      document.getElementById('loading-spinner').style.display = 'none';
+    });
+    
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+    
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
-
 </body>
 </html>

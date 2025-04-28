@@ -3,63 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="فيديوهات توثيقية عن إنجازات مصر والمشروعات القومية - مبادرة مصر بعيون النيل">
   <title>فيديوهات توثيقية | مصر بعيون النيل</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-     <audio id="background-music" autoplay loop>
-          <source src="r.mp3" type="audio/mp3">
-          متصفحك لا يدعم الصوت.
-        </audio>
+  <!-- Loading Spinner -->
+  <div id="loading-spinner">
+    <div class="spinner"></div>
+  </div>
 
-  <!-- 🧭 Navbar -->
-  <header class="navbar">
-    <div class="container">
-      <h1>مصر بعيون النيل</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="goals.html">الأهداف</a></li>
-          <li><a href="future.html">رؤية المستقبل</a></li>
-          <li><a href="share.html">شارك برؤيتك</a></li>
-          <li><a href="videos.html" class="active">فيديوهات</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- Header -->
+  <header class="animate__animated animate__fadeInDown animate__delay-1s">
+    <h1>مصر بعيون النيل</h1>
+    <nav aria-label="القائمة الرئيسية">
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="goals.html">الأهداف</a></li>
+        <li><a href="projects.html">المشاريع</a></li>
+        <li><a href="videos.html" class="active">فيديوهات</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- 🎥 فيديو رئيسي -->
-  <section class="video-main-section">
-    <div class="container">
-      <h2 data-aos="fade-down">فيديو توثيقي رئيسي عن إنجازات مصر 🇪🇬</h2>
-      <div class="video-main" data-aos="zoom-in">
-        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/VIDEO_ID_MAIN" title="فيديو رئيسي" frameborder="0" allowfullscreen></iframe>
+  <!-- Main Content -->
+  <main>
+    <!-- Featured Video Section -->
+    <section class="video-featured">
+      <div class="container">
+        <h2 class="animate__animated animate__fadeInDown animate__delay-1s">فيديو توثيقي رئيسي عن إنجازات مصر 🇪🇬</h2>
+        <div class="featured-video-wrapper" data-aos="zoom-in">
+          <div class="video-container">
+            <iframe 
+              width="100%" 
+              height="500" 
+              src="https://www.youtube.com/embed/7wYUf9MYP2o?si=P-RhV03xpvvOzA2T" 
+              title="فيديو رئيسي" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-info">
+            <h3>إنجازات مصر في العقد الأخير</h3>
+            <p>شاهد كيف تطورت مصر في السنوات الأخيرة من خلال هذا الفيديو التوثيقي الشامل</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 🎬 فيديوهات إضافية -->
-  <section class="videos-section">
-    <div class="container">
-      <h2 data-aos="fade-down">فيديوهات أخرى</h2>
-      <div class="video-grid">
-        <div class="video-box" data-aos="zoom-in">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7wYUf9MYP2o?si=P-RhV03xpvvOzA2T" title="توثيق ١" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-box" data-aos="zoom-in" data-aos-delay="100">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID_2" title="توثيق ٢" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-box" data-aos="zoom-in" data-aos-delay="200">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID_3" title="توثيق ٣" frameborder="0" allowfullscreen></iframe>
+    <!-- Additional Videos Section -->
+    <section class="videos-grid">
+      <div class="container">
+        <h2 class="animate__animated animate__fadeInDown animate__delay-1s">فيديوهات أخرى</h2>
+        <div class="videos-container">
+          <div class="video-card" data-aos="fade-up">
+            <div class="video-thumbnail">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/VIDEO_ID_2" 
+                title="توثيق ٢" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-details">
+              <h3>المشروعات القومية</h3>
+              <p>تعرف على أهم المشروعات القومية التي تم إنجازها</p>
+            </div>
+          </div>
+
+          <div class="video-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="video-thumbnail">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/VIDEO_ID_3" 
+                title="توثيق ٣" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-details">
+              <h3>تطوير البنية التحتية</h3>
+              <p>شاهد كيف تم تطوير البنية التحتية في مصر</p>
+            </div>
+          </div>
+
+          <div class="video-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="video-thumbnail">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/VIDEO_ID_4" 
+                title="توثيق ٤" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="video-details">
+              <h3>التنمية المستدامة</h3>
+              <p>تعرف على جهود مصر في تحقيق التنمية المستدامة</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- 🔻 Footer -->
-  <footer class="footer" data-aos="fade-up">
+  <!-- Footer -->
+  <footer class="footer animate__animated animate__fadeInUp animate__delay-2s">
     <div class="footer-content">
       <h3>مبادرة "مصر بعيون النيل"</h3>
       <p>معًا بالوعي نحميها 🇪🇬</p>
@@ -71,15 +139,45 @@
         <li><a href="videos.html">فيديوهات</a></li>
       </ul>
       <p class="copyright">
-        &copy; 2025 جميع الحقوق محفوظة - طلاب مدارس النيل 💡
+        &copy; <span id="currentYear"></span> جميع الحقوق محفوظة - طلاب مدارس النيل 💡
       </p>
     </div>
   </footer>
 
-  <!-- AOS Animation -->
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="اطلع فوق">⬆️</button>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
+    });
+    
+    // Update year automatically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Loading spinner
+    window.addEventListener('load', function() {
+      document.getElementById('loading-spinner').style.display = 'none';
+    });
+    
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+    
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
