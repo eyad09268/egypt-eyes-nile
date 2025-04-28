@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="فيديوهات توثيقية عن إنجازات مصر والمشروعات القومية - مبادرة مصر بعيون النيل">
   <title>فيديوهات توثيقية | مصر بعيون النيل</title>
+  <link rel="manifest" href="/manifest.json">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,6 +18,20 @@
   
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful');
+          })
+          .catch(err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
+  </script>
 </head>
 <body>
   <!-- Loading Spinner -->
