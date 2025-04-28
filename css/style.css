@@ -347,7 +347,7 @@ nav a.active {
 
 /* Back to Top Button */
 #backToTop {
-  display: none;
+  display: none; 
   position: fixed;
   bottom: 30px;
   left: 30px;
