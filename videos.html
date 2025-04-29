@@ -47,12 +47,20 @@
         <h1>مصر بعيون النيل</h1>
         <nav aria-label="القائمة الرئيسية">
           <ul>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="goals.html">الأهداف</a></li>
-            <li><a href="projects.html">المشاريع</a></li>
-            <li><a href="videos.html" class="active">فيديوهات</a></li>
+            <li><a href="index.html" data-lang="home">الرئيسية</a></li>
+            <li><a href="goals.html" data-lang="goals">الأهداف</a></li>
+            <li><a href="projects.html" data-lang="projects">المشاريع</a></li>
+            <li><a href="videos.html" class="active" data-lang="videos">فيديوهات</a></li>
           </ul>
         </nav>
+      </div>
+      <div class="header-controls">
+        <button id="themeSwitch" class="theme-switch" aria-label="تغيير المظهر">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button id="langSwitch" class="lang-switch" aria-label="تغيير اللغة">
+          <span class="lang-text" data-lang="ar">EN</span>
+        </button>
       </div>
     </div>
   </header>
@@ -168,7 +176,7 @@
   <button id="backToTop" title="اطلع فوق">⬆️</button>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
       duration: 1000,
@@ -197,6 +205,24 @@
     
     backToTopBtn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Theme Switcher
+    const themeSwitch = document.getElementById('themeSwitch');
+    const themeIcon = themeSwitch.querySelector('.theme-icon');
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+    }
+    
+    setTheme(currentTheme);
+    
+    themeSwitch.addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      setTheme(currentTheme);
     });
   </script>
 </body>

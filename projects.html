@@ -27,16 +27,69 @@
 
   <!-- 🧭 Navbar -->
   <header class="animate__animated animate__fadeInDown animate__delay-1s">
-    <h1>مصر بعيون النيل</h1>
-    <nav aria-label="القائمة الرئيسية">
-      <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="goals.html">الأهداف</a></li>
-        <li><a href="projects.html">المشاريع</a></li>
-        <li><a href="videos.html">فيديوهات</a></li>
-      </ul>
-    </nav>
+    <div class="header-content">
+      <h1>مصر بعيون النيل</h1>
+      <nav aria-label="القائمة الرئيسية">
+        <ul>
+          <li><a href="index.html" data-lang="home">الرئيسية</a></li>
+          <li><a href="goals.html" data-lang="goals">الأهداف</a></li>
+          <li><a href="projects.html" class="active" data-lang="projects">المشاريع</a></li>
+          <li><a href="videos.html" data-lang="videos">فيديوهات</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-controls">
+      <button id="themeSwitch" class="theme-switch" aria-label="تغيير المظهر">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button id="langSwitch" class="lang-switch" aria-label="تغيير اللغة">
+        <span class="lang-text" data-lang="ar">EN</span>
+      </button>
+    </div>
   </header>
+
+  <section class="projects">
+    <div class="container">
+      <h2 class="animate__animated animate__fadeInUp animate__delay-1s" data-lang="main-projects">أهم المشروعات القومية</h2>
+      <div class="projects-container">
+        <div class="project-card" data-aos="fade-up">
+          <a href="card-details.html?type=projects&id=capital" class="project-link">
+            <div class="project-image">
+              <img loading="lazy" src="images/capital.jpg" alt="تصميم حديث للمباني في العاصمة الإدارية الجديدة">
+            </div>
+            <div class="project-content">
+              <h3 data-lang="capital-title">العاصمة الإدارية الجديدة</h3>
+              <p data-lang="capital-desc">مدينة ذكية بتغير وجه مصر... مباني حكومية، مناطق سكنية، ونظام نقل متطور.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+          <a href="card-details.html?type=projects&id=hayaKarima" class="project-link">
+            <div class="project-image">
+              <img loading="lazy" src="images/haya-karima.jpg" alt="مشاهد من مشروع حياة كريمة في الريف المصري">
+            </div>
+            <div class="project-content">
+              <h3 data-lang="haya-karima-title">حياة كريمة</h3>
+              <p data-lang="haya-karima-desc">مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <a href="card-details.html?type=projects&id=roads" class="project-link">
+            <div class="project-image">
+              <img loading="lazy" src="images/roads.jpg" alt="شبكة طرق وكباري حديثة في مصر">
+            </div>
+            <div class="project-content">
+              <h3 data-lang="roads-title">الطرق والكباري</h3>
+              <p data-lang="roads-desc">أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- 🔻 Footer -->
   <footer class="footer" data-aos="fade-up">
@@ -57,7 +110,52 @@
 
   <!-- AOS Animations -->
   <script>
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
+    });
+    
+    // Update year automatically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Loading spinner
+    window.addEventListener('load', function() {
+      document.getElementById('loading-spinner').style.display = 'none';
+    });
+    
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+    
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Theme Switcher
+    const themeSwitch = document.getElementById('themeSwitch');
+    const themeIcon = themeSwitch.querySelector('.theme-icon');
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+    }
+    
+    setTheme(currentTheme);
+    
+    themeSwitch.addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      setTheme(currentTheme);
+    });
   </script>
 
 </body>

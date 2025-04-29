@@ -45,12 +45,20 @@
         <h1>مصر بعيون النيل</h1>
         <nav aria-label="القائمة الرئيسية">
           <ul>
-            <li><a href="index.html" class="active">الرئيسية</a></li>
-            <li><a href="goals.html">الأهداف</a></li>
-            <li><a href="projects.html">المشاريع</a></li>
-            <li><a href="videos.html">فيديوهات</a></li>
+            <li><a href="index.html" class="active" data-lang="home">الرئيسية</a></li>
+            <li><a href="goals.html" data-lang="goals">الأهداف</a></li>
+            <li><a href="projects.html" data-lang="projects">المشاريع</a></li>
+            <li><a href="videos.html" data-lang="videos">فيديوهات</a></li>
           </ul>
         </nav>
+      </div>
+      <div class="header-controls">
+        <button id="themeSwitch" class="theme-switch" aria-label="تغيير المظهر">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button id="langSwitch" class="lang-switch" aria-label="تغيير اللغة">
+          <span class="lang-text" data-lang="ar">EN</span>
+        </button>
       </div>
     </div>
   </header>
@@ -58,43 +66,49 @@
   <main>
     <section class="hero animate__animated animate__zoomIn animate__delay-1s">
       <div class="hero-content">
-        <h2 class="typewriter-text">مستقبل مصر.. بنحلمه وهنحققه</h2>
-        <p class="animate__animated animate__fadeInUp animate__delay-2s">مع بعض بالوعي نحميها 💪🇪🇬</p>
+        <h2 class="typewriter-text" data-lang="hero-title">مستقبل مصر.. بنحلمه وهنحققه</h2>
+        <p class="animate__animated animate__fadeInUp animate__delay-2s" data-lang="hero-subtitle">مع بعض بالوعي نحميها 💪🇪🇬</p>
       </div>
     </section>
 
     <section class="projects">
       <div class="container">
-        <h2 class="animate__animated animate__fadeInUp animate__delay-1s">أهم المشروعات القومية</h2>
+        <h2 class="animate__animated animate__fadeInUp animate__delay-1s" data-lang="main-projects">أهم المشروعات القومية</h2>
         <div class="projects-container">
           <div class="project-card" data-aos="fade-up">
-            <div class="project-image">
-              <img loading="lazy" src="images/capital.jpg" alt="تصميم حديث للمباني في العاصمة الإدارية الجديدة">
-            </div>
-            <div class="project-content">
-              <h3>العاصمة الإدارية الجديدة</h3>
-              <p>مدينة ذكية بتغير وجه مصر... مباني حكومية، مناطق سكنية، ونظام نقل متطور.</p>
-            </div>
+            <a href="card-details.html?type=projects&id=capital" class="project-link">
+              <div class="project-image">
+                <img loading="lazy" src="images/capital.jpg" alt="تصميم حديث للمباني في العاصمة الإدارية الجديدة">
+              </div>
+              <div class="project-content">
+                <h3 data-lang="capital-title">العاصمة الإدارية الجديدة</h3>
+                <p data-lang="capital-desc">مدينة ذكية بتغير وجه مصر... مباني حكومية، مناطق سكنية، ونظام نقل متطور.</p>
+              </div>
+            </a>
           </div>
 
           <div class="project-card" data-aos="fade-up" data-aos-delay="150">
-            <div class="project-image">
-              <img loading="lazy" src="images/haya-karima.jpg" alt="مشاهد من مشروع حياة كريمة في الريف المصري">
-            </div>
-            <div class="project-content">
-              <h3>حياة كريمة</h3>
-              <p>مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين.</p>
-            </div>
+            <a href="card-details.html?type=projects&id=hayaKarima" class="project-link">
+              <div class="project-image">
+                <img loading="lazy" src="images/haya-karima.jpg" alt="مشاهد من مشروع حياة كريمة في الريف المصري">
+              </div>
+              <div class="project-content">
+                <h3 data-lang="haya-karima-title">حياة كريمة</h3>
+                <p data-lang="haya-karima-desc">مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين.</p>
+              </div>
+            </a>
           </div>
 
           <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="project-image">
-              <img loading="lazy" src="images/roads.jpg" alt="شبكة طرق وكباري حديثة في مصر">
-            </div>
-            <div class="project-content">
-              <h3>الطرق والكباري</h3>
-              <p>أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.</p>
-            </div>
+            <a href="card-details.html?type=projects&id=roads" class="project-link">
+              <div class="project-image">
+                <img loading="lazy" src="images/roads.jpg" alt="شبكة طرق وكباري حديثة في مصر">
+              </div>
+              <div class="project-content">
+                <h3 data-lang="roads-title">الطرق والكباري</h3>
+                <p data-lang="roads-desc">أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -102,23 +116,23 @@
 
     <section class="future" id="future">
       <div class="container">
-        <h2 class="animate__animated animate__fadeInDown animate__delay-1s">رؤية المستقبل</h2>
+        <h2 class="animate__animated animate__fadeInDown animate__delay-1s" data-lang="future-vision">رؤية المستقبل</h2>
         <div class="future-container">
           <div class="future-card" data-aos="fade-right" data-aos-delay="200">
             <div class="future-icon">💸</div>
-            <p>"أنا شايف إن مصر هتبقى من أقوى 10 اقتصاديات في العالم"</p>
+            <p data-lang="future-quote-1">"أنا شايف إن مصر هتبقى من أقوى 10 اقتصاديات في العالم"</p>
             <h4>- أحمد مصطفى</h4>
           </div>
       
           <div class="future-card" data-aos="fade-left" data-aos-delay="300">
             <div class="future-icon">🚄</div>
-            <p>"هتكون فيها قطارات سريعة في كل محافظة وتكنولوجيا في كل بيت"</p>
+            <p data-lang="future-quote-2">"هتكون فيها قطارات سريعة في كل محافظة وتكنولوجيا في كل بيت"</p>
             <h4>- سارة محمد</h4>
           </div>
       
           <div class="future-card" data-aos="zoom-in" data-aos-delay="400">
             <div class="future-icon">📱</div>
-            <p>"هيكون عندنا مدارس ذكية لكل الطلاب، ونت سريع في كل حتة"</p>
+            <p data-lang="future-quote-3">"هيكون عندنا مدارس ذكية لكل الطلاب، ونت سريع في كل حتة"</p>
             <h4>- ياسين وائل</h4>
           </div>
         </div>
@@ -128,45 +142,22 @@
 
   <footer class="footer animate__animated animate__fadeInUp animate__delay-2s">
     <div class="footer-content">
-      <h3>مبادرة "مصر بعيون النيل"</h3>
-      <p>معًا بالوعي نحميها 🇪🇬</p>
+      <h3 data-lang="footer-title">مبادرة "مصر بعيون النيل"</h3>
+      <p data-lang="footer-subtitle">معًا بالوعي نحميها 🇪🇬</p>
       <ul class="footer-links">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="goals.html">الأهداف</a></li>
-        <li><a href="#future">رؤية المستقبل</a></li>
-        <li><a href="videos.html">فيديوهات</a></li>
+        <li><a href="index.html" data-lang="home">الرئيسية</a></li>
+        <li><a href="goals.html" data-lang="goals">الأهداف</a></li>
+        <li><a href="#future" data-lang="future-vision">رؤية المستقبل</a></li>
+        <li><a href="videos.html" data-lang="videos">فيديوهات</a></li>
       </ul>
       <p class="copyright">
-        &copy; <span id="currentYear"></span> جميع الحقوق محفوظة - طلاب مدارس النيل 💡
+        &copy; <span id="currentYear"></span> <span data-lang="copyright">جميع الحقوق محفوظة - طلاب مدارس النيل</span> 💡
       </p>
     </div>
   </footer>
   <button id="backToTop" title="اطلع فوق">⬆️</button>
 
-
   <!-- Scripts -->
-  <script>
-    window.addEventListener('load', function() {
-      document.getElementById('loading-spinner').style.display = 'none';
-    });
-  </script>
-  
-  <script>
-    const backToTopBtn = document.getElementById('backToTop');
-  
-    window.onscroll = function() {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopBtn.style.display = "block";
-      } else {
-        backToTopBtn.style.display = "none";
-      }
-    };
-  
-    backToTopBtn.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-  
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -175,14 +166,120 @@
       easing: 'ease-in-out',
     });
     
-    // تحديث السنة تلقائيًا
+    // Update year automatically
     document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
-  <script>
+    
+    // Loading spinner
     window.addEventListener('load', function() {
       document.getElementById('loading-spinner').style.display = 'none';
     });
+    
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+    
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Theme Switcher
+    const themeSwitch = document.getElementById('themeSwitch');
+    const themeIcon = themeSwitch.querySelector('.theme-icon');
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+    }
+    
+    setTheme(currentTheme);
+    
+    themeSwitch.addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      setTheme(currentTheme);
+    });
   </script>
-  
+
+  <!-- Language Switcher Script -->
+  <script>
+    const translations = {
+      ar: {
+        home: "الرئيسية",
+        goals: "الأهداف",
+        projects: "المشاريع",
+        videos: "فيديوهات",
+        "hero-title": "مستقبل مصر.. بنحلمه وهنحققه",
+        "hero-subtitle": "مع بعض بالوعي نحميها 💪🇪🇬",
+        "main-projects": "أهم المشروعات القومية",
+        "capital-title": "العاصمة الإدارية الجديدة",
+        "capital-desc": "مدينة ذكية بتغير وجه مصر... مباني حكومية، مناطق سكنية، ونظام نقل متطور.",
+        "haya-karima-title": "حياة كريمة",
+        "haya-karima-desc": "مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين.",
+        "roads-title": "الطرق والكباري",
+        "roads-desc": "أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.",
+        "future-vision": "رؤية المستقبل",
+        "future-quote-1": "\"أنا شايف إن مصر هتبقى من أقوى 10 اقتصاديات في العالم\"",
+        "future-quote-2": "\"هتكون فيها قطارات سريعة في كل محافظة وتكنولوجيا في كل بيت\"",
+        "future-quote-3": "\"هيكون عندنا مدارس ذكية لكل الطلاب، ونت سريع في كل حتة\"",
+        "footer-title": "مبادرة \"مصر بعيون النيل\"",
+        "footer-subtitle": "معًا بالوعي نحميها 🇪🇬",
+        "copyright": "جميع الحقوق محفوظة - طلاب مدارس النيل"
+      },
+      en: {
+        home: "Home",
+        goals: "Goals",
+        projects: "Projects",
+        videos: "Videos",
+        "hero-title": "Egypt's Future... We Dream It and We'll Achieve It",
+        "hero-subtitle": "Together with awareness, we protect it 💪🇪🇬",
+        "main-projects": "Major National Projects",
+        "capital-title": "New Administrative Capital",
+        "capital-desc": "A smart city changing Egypt's face... Government buildings, residential areas, and an advanced transportation system.",
+        "haya-karima-title": "Decent Life",
+        "haya-karima-desc": "A massive initiative to develop rural Egypt and improve the quality of life for millions of citizens.",
+        "roads-title": "Roads and Bridges",
+        "roads-desc": "The largest modern road network connecting governorates and facilitating transportation and trade.",
+        "future-vision": "Future Vision",
+        "future-quote-1": "\"I see Egypt becoming one of the top 10 economies in the world\"",
+        "future-quote-2": "\"It will have fast trains in every governorate and technology in every home\"",
+        "future-quote-3": "\"We'll have smart schools for all students and fast internet everywhere\"",
+        "footer-title": "\"Egypt Through the Nile's Eyes\" Initiative",
+        "footer-subtitle": "Together with awareness, we protect it 🇪🇬",
+        "copyright": "All rights reserved - Nile Schools Students"
+      }
+    };
+
+    const langSwitch = document.getElementById('langSwitch');
+    const langText = langSwitch.querySelector('.lang-text');
+    let currentLang = 'ar';
+
+    function switchLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      langText.textContent = currentLang === 'ar' ? 'EN' : 'عربي';
+      
+      // Update all elements with data-lang attribute
+      document.querySelectorAll('[data-lang]').forEach(element => {
+        const key = element.getAttribute('data-lang');
+        if (translations[currentLang][key]) {
+          element.textContent = translations[currentLang][key];
+        }
+      });
+
+      // Update back to top button title
+      backToTopBtn.title = currentLang === 'ar' ? 'اطلع فوق' : 'Back to Top';
+    }
+
+    langSwitch.addEventListener('click', switchLanguage);
+  </script>
 </body>
 </html>

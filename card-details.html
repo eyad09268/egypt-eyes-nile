@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل المشروع | مصر بعيون النيل</title>
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Loading Spinner -->
+  <div id="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="animate__animated animate__fadeInDown animate__delay-1s">
+    <div class="header-wrapper">
+      <img src="images/logo.png" alt="شعار مصر بعيون النيل" class="header-logo">
+      <div class="header-content">
+        <h1>مصر بعيون النيل</h1>
+        <nav aria-label="القائمة الرئيسية">
+          <ul>
+            <li><a href="index.html" data-lang="home">الرئيسية</a></li>
+            <li><a href="goals.html" data-lang="goals">الأهداف</a></li>
+            <li><a href="projects.html" data-lang="projects">المشاريع</a></li>
+            <li><a href="videos.html" data-lang="videos">فيديوهات</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-controls">
+        <button id="themeSwitch" class="theme-switch" aria-label="تغيير المظهر">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button id="langSwitch" class="lang-switch" aria-label="تغيير اللغة">
+          <span class="lang-text" data-lang="ar">EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="card-details">
+      <div class="container">
+        <div class="card-header" data-aos="fade-down">
+          <h2 id="cardTitle"></h2>
+          <p id="cardDescription"></p>
+        </div>
+        
+        <div class="card-content" data-aos="fade-up">
+          <div class="card-image">
+            <img id="cardImage" src="" alt="">
+          </div>
+          
+          <div class="card-info">
+            <div id="cardDetails"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer animate__animated animate__fadeInUp animate__delay-2s">
+    <div class="footer-content">
+      <h3>مبادرة "مصر بعيون النيل"</h3>
+      <p>معًا بالوعي نحميها 🇪🇬</p>
+      <ul class="footer-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="goals.html">الأهداف</a></li>
+        <li><a href="future.html">رؤية المستقبل</a></li>
+        <li><a href="share.html">شارك برؤيتك</a></li>
+      </ul>
+      <p class="copyright">
+        &copy; <span id="currentYear"></span> جميع الحقوق محفوظة - طلاب مدارس النيل 💡
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="اطلع فوق">⬆️</button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Card Data
+    const cardData = {
+      projects: {
+        capital: {
+          id: 'capital',
+          title: {
+            ar: 'العاصمة الإدارية الجديدة',
+            en: 'New Administrative Capital'
+          },
+          description: {
+            ar: 'مدينة ذكية بتغير وجه مصر... مباني حكومية، مناطق سكنية، ونظام نقل متطور.',
+            en: 'A smart city changing Egypt\'s face... Government buildings, residential areas, and an advanced transportation system.'
+          },
+          image: 'images/capital.jpg',
+          details: {
+            location: {
+              ar: 'شرق القاهرة',
+              en: 'East of Cairo'
+            },
+            area: {
+              ar: '700 كيلومتر مربع',
+              en: '700 square kilometers'
+            },
+            population: {
+              ar: '6.5 مليون نسمة',
+              en: '6.5 million people'
+            },
+            completion: {
+              ar: '2023',
+              en: '2023'
+            },
+            features: {
+              ar: [
+                'أكبر مسجد في مصر',
+                'أكبر كاتدرائية في الشرق الأوسط',
+                'أطول برج في أفريقيا',
+                'مدينة ذكية متكاملة'
+              ],
+              en: [
+                'Largest mosque in Egypt',
+                'Largest cathedral in the Middle East',
+                'Tallest tower in Africa',
+                'Integrated smart city'
+              ]
+            },
+            impact: {
+              ar: 'تغيير جذري في شكل العاصمة وتخفيف الضغط على القاهرة القديمة',
+              en: 'Radical change in the capital\'s form and reducing pressure on old Cairo'
+            }
+          }
+        },
+        hayaKarima: {
+          id: 'haya-karima',
+          title: {
+            ar: 'حياة كريمة',
+            en: 'Decent Life'
+          },
+          description: {
+            ar: 'مبادرة عملاقة لتطوير الريف المصري ورفع جودة حياة ملايين المواطنين.',
+            en: 'A massive initiative to develop rural Egypt and improve the quality of life for millions of citizens.'
+          },
+          image: 'images/haya-karima.jpg',
+          details: {
+            scope: {
+              ar: '4500 قرية',
+              en: '4,500 villages'
+            },
+            budget: {
+              ar: '700 مليار جنيه',
+              en: '700 billion EGP'
+            },
+            beneficiaries: {
+              ar: '58 مليون مواطن',
+              en: '58 million citizens'
+            },
+            services: {
+              ar: [
+                'تطوير البنية التحتية',
+                'تحسين الخدمات الصحية',
+                'تطوير التعليم',
+                'توفير فرص العمل'
+              ],
+              en: [
+                'Infrastructure development',
+                'Improving health services',
+                'Education development',
+                'Providing job opportunities'
+              ]
+            },
+            impact: {
+              ar: 'تحسين جودة حياة المواطنين في الريف المصري',
+              en: 'Improving the quality of life for citizens in rural Egypt'
+            }
+          }
+        },
+        roads: {
+          id: 'roads',
+          title: {
+            ar: 'الطرق والكباري',
+            en: 'Roads and Bridges'
+          },
+          description: {
+            ar: 'أكبر شبكة طرق حديثة بتربط بين المحافظات وبتسهل النقل والتجارة.',
+            en: 'The largest modern road network connecting governorates and facilitating transportation and trade.'
+          },
+          image: 'images/roads.jpg',
+          details: {
+            totalLength: {
+              ar: '7000 كيلومتر',
+              en: '7,000 kilometers'
+            },
+            projects: {
+              ar: [
+                'طريق القاهرة - الإسكندرية الصحراوي',
+                'طريق القاهرة - السويس',
+                'طريق القاهرة - العين السخنة',
+                'طريق القاهرة - أسوان'
+              ],
+              en: [
+                'Cairo - Alexandria Desert Road',
+                'Cairo - Suez Road',
+                'Cairo - Ain Sokhna Road',
+                'Cairo - Aswan Road'
+              ]
+            },
+            impact: {
+              ar: 'تسهيل حركة النقل والتجارة بين المحافظات',
+              en: 'Facilitating transportation and trade between governorates'
+            }
+          }
+        }
+      },
+      goals: {
+        achievements: {
+          id: 'achievements',
+          title: 'تسليط الضوء على الإنجازات',
+          description: 'تسليط الضوء على إنجازات الدولة المصرية في آخر 10 سنين',
+          icon: '💡',
+          details: {
+            focus: 'الإنجازات القومية',
+            period: 'آخر 10 سنوات',
+            examples: [
+              'تطوير البنية التحتية',
+              'المشروعات القومية',
+              'التنمية المستدامة'
+            ]
+          }
+        },
+        projects: {
+          id: 'projects',
+          title: 'عرض المشروعات القومية',
+          description: 'عرض المشروعات القومية بطريقة بسيطة وسهلة',
+          icon: '📊',
+          details: {
+            approach: 'عرض مبسط',
+            target: 'الشباب',
+            format: 'فيديوهات ورسوم توضيحية'
+          }
+        }
+      }
+    };
+    
+    // Translations
+    const translations = {
+      ar: {
+        home: "الرئيسية",
+        goals: "الأهداف",
+        projects: "المشاريع",
+        videos: "فيديوهات",
+        "card-not-found": "المشروع غير موجود",
+        "card-not-found-desc": "عذراً، لم يتم العثور على المشروع المطلوب."
+      },
+      en: {
+        home: "Home",
+        goals: "Goals",
+        projects: "Projects",
+        videos: "Videos",
+        "card-not-found": "Project Not Found",
+        "card-not-found-desc": "Sorry, the requested project could not be found."
+      }
+    };
+    
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
+    });
+    
+    // Get card ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const cardId = urlParams.get('id');
+    const cardType = urlParams.get('type');
+    
+    // Language Switcher
+    const langSwitch = document.getElementById('langSwitch');
+    const langText = langSwitch.querySelector('.lang-text');
+    let currentLang = 'ar';
+
+    function updateCardContent(card, lang) {
+      if (card) {
+        document.title = `${card.title[lang]} | مصر بعيون النيل`;
+        document.getElementById('cardTitle').textContent = card.title[lang];
+        document.getElementById('cardDescription').textContent = card.description[lang];
+        
+        if (card.image) {
+          document.getElementById('cardImage').src = card.image;
+          document.getElementById('cardImage').alt = card.title[lang];
+        }
+        
+        const detailsContainer = document.getElementById('cardDetails');
+        detailsContainer.innerHTML = ''; // Clear existing content
+        
+        if (card.details) {
+          for (const [key, value] of Object.entries(card.details)) {
+            if (Array.isArray(value[lang])) {
+              const list = document.createElement('ul');
+              value[lang].forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                list.appendChild(li);
+              });
+              detailsContainer.appendChild(list);
+            } else {
+              const detail = document.createElement('p');
+              detail.innerHTML = `<strong>${key}:</strong> ${value[lang]}`;
+              detailsContainer.appendChild(detail);
+            }
+          }
+        }
+      }
+    }
+
+    function switchLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      langText.textContent = currentLang === 'ar' ? 'EN' : 'عربي';
+      
+      // Update all elements with data-lang attribute
+      document.querySelectorAll('[data-lang]').forEach(element => {
+        const key = element.getAttribute('data-lang');
+        if (translations[currentLang][key]) {
+          element.textContent = translations[currentLang][key];
+        }
+      });
+
+      // Update back to top button title
+      backToTopBtn.title = currentLang === 'ar' ? 'اطلع فوق' : 'Back to Top';
+
+      // Update card content
+      if (cardId && cardType && cardData[cardType] && cardData[cardType][cardId]) {
+        updateCardContent(cardData[cardType][cardId], currentLang);
+      }
+    }
+
+    langSwitch.addEventListener('click', switchLanguage);
+    
+    // Load card data
+    if (cardId && cardType && cardData[cardType] && cardData[cardType][cardId]) {
+      updateCardContent(cardData[cardType][cardId], currentLang);
+    } else {
+      // Handle invalid card ID
+      document.getElementById('cardTitle').textContent = translations[currentLang]['card-not-found'];
+      document.getElementById('cardDescription').textContent = translations[currentLang]['card-not-found-desc'];
+    }
+    
+    // Update year automatically
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Loading spinner
+    window.addEventListener('load', function() {
+      document.getElementById('loading-spinner').style.display = 'none';
+    });
+    
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+    
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Theme Switcher
+    const themeSwitch = document.getElementById('themeSwitch');
+    const themeIcon = themeSwitch.querySelector('.theme-icon');
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+    }
+    
+    setTheme(currentTheme);
+    
+    themeSwitch.addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      setTheme(currentTheme);
+    });
+  </script>
+</body>
+</html> 

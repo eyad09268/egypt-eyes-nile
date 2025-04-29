@@ -1,6 +1,6 @@
 /* CSS Variables */
 :root {
-  /* Colors */
+  /* Light Theme Colors */
   --primary-color: #0077b6;
   --primary-light: #00b4d8;
   --primary-dark: #0057b7;
@@ -31,6 +31,21 @@
   --transition-slow: 0.5s ease;
 }
 
+/* Dark Theme Colors */
+[data-theme="dark"] {
+  --primary-color: #00b4d8;
+  --primary-light: #90e0ef;
+  --primary-dark: #0077b6;
+  --accent-color: #ffd700;
+  --text-dark: #ffffff;
+  --text-light: #222222;
+  --background-light: #1a1a1a;
+  --background-white: #2d2d2d;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 6px 15px rgba(0,0,0,0.5);
+}
+
 /* Reset & Base Styles */
 * {
   margin: 0;
@@ -48,6 +63,33 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* Dark Mode Text Colors */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] a,
+[data-theme="dark"] li {
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] .goal-card h3,
+[data-theme="dark"] .goal-card p,
+[data-theme="dark"] .video-info h3,
+[data-theme="dark"] .video-info p,
+[data-theme="dark"] .video-details h3,
+[data-theme="dark"] .video-details p,
+[data-theme="dark"] .project-content h3,
+[data-theme="dark"] .project-content p,
+[data-theme="dark"] .future-card p,
+[data-theme="dark"] .future-card h4 {
+  color: var(--text-dark);
 }
 
 /* Header Styles */
@@ -163,7 +205,7 @@ nav a.active {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/egypt-hero.jpg') no-repeat center center/cover;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero.png') no-repeat center center/cover;
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -727,6 +769,15 @@ nav a.active {
   .hero p {
     font-size: 1.2rem;
   }
+
+  .lang-switch {
+    padding: var(--spacing-xs);
+    margin-right: var(--spacing-xs);
+  }
+  
+  .lang-text {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1007,5 +1058,234 @@ nav a.active {
   border-radius: var(--radius-lg);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+}
+
+/* Language Switcher */
+.lang-switch {
+  background: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition-normal);
+  position: relative;
+  z-index: 1;
+  margin-right: var(--spacing-sm);
+}
+
+.lang-switch:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.lang-text {
+  font-size: 0.9rem;
+  display: inline-block;
+  padding: 0 var(--spacing-xs);
+}
+
+/* Theme Switcher */
+.theme-switch {
+  background: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition-normal);
+  position: relative;
+  z-index: 1;
+  margin-right: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.theme-switch:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+}
+
+/* Header Controls */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+  .header-controls {
+    gap: var(--spacing-xs);
+  }
+  
+  .theme-switch {
+    padding: var(--spacing-xs);
+  }
+  
+  .theme-icon {
+    font-size: 1rem;
+  }
+}
+
+/* Card Details Page */
+.card-details {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background: linear-gradient(135deg, var(--background-light), var(--background-white));
+  min-height: calc(100vh - 200px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%),
+              linear-gradient(-45deg, rgba(0,0,0,0.02) 25%, transparent 25%);
+  background-size: 20px 20px;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.card-header h2 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+}
+
+.card-header p {
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.card-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-normal);
+}
+
+.card-info {
+  background: var(--background-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.card-info h3 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+}
+
+.card-info p {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-info ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0;
+}
+
+.card-info li {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: var(--spacing-xs) 0;
+  position: relative;
+  padding-right: var(--spacing-md);
+}
+
+.card-info li::before {
+  content: '•';
+  color: var(--primary-color);
+  position: absolute;
+  right: 0;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .card-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-header h2 {
+    font-size: 2rem;
+  }
+  
+  .card-header p {
+    font-size: 1.1rem;
+  }
+  
+  .card-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .card-info p,
+  .card-info li {
+    font-size: 1rem;
+  }
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+  transition: var(--transition-normal);
+}
+
+.project-link:hover {
+  transform: translateY(-5px);
+}
+
+.project-card {
+  background: var(--background-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: var(--transition-normal);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-lg);
 }
 
